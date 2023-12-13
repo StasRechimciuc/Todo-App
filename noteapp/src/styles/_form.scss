@@ -1,0 +1,35 @@
+@import './mixins';
+
+.note-form{
+    position: absolute;
+    @include flexCenter(column);
+    gap: 20px;
+    transform: translate(103%,10%);
+    background: #333333;
+    width: 300px;
+    height: 500px;
+    color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px rgba(#000000, .4);
+    z-index: 1000;
+    .form-close{
+        height: 30px;
+        width: 30px;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+    }
+    .form-inp{
+        max-width: 90%;
+        min-width: 90%;
+        padding: 10px;
+    }
+    .form-btn{
+        @extend .form-inp;
+    }
+}
+.darkNote-form{
+    @extend .note-form;
+    background: #ffffff;
+    color: #333333;
+}

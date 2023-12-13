@@ -1,0 +1,21 @@
+@mixin button() {
+    padding: 7px 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border:none;
+    border-radius: 10px;
+    background: rgb(32, 195, 32);
+    color: $mainColor;
+    transition: .2s;
+    width: 100%;
+    &:hover{
+        transform: scale(1.03);
+        opacity: .8;
+    }
+}
+@mixin flexCenter($dir) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: $dir;
+}
