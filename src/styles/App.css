@@ -1,0 +1,309 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600&family=Montserrat:wght@300;500;700&family=Neucha&display=swap");
+.note-form, .darkNote-form {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+  transform: translate(103%, 10%);
+  background: #333333;
+  width: 300px;
+  height: 500px;
+  color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+}
+.note-form .form-close, .darkNote-form .form-close {
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+.note-form .form-inp, .darkNote-form .form-inp, .note-form .form-btn, .darkNote-form .form-btn {
+  max-width: 90%;
+  min-width: 90%;
+  padding: 10px;
+}
+.darkNote-form {
+  background: #ffffff;
+  color: #333333;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Montserrat";
+  box-sizing: border-box;
+}
+
+body {
+  color: #fff;
+}
+body p {
+  font-weight: 300;
+}
+body h4, body h3, body h5 {
+  font-weight: 500;
+}
+
+.App {
+  background: #333333;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.darkApp {
+  background: #fff;
+  color: #3f3f3f;
+}
+
+.btn {
+  padding: 7px 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: none;
+  border-radius: 10px;
+  background: rgb(32, 195, 32);
+  color: #3f3f3f;
+  transition: 0.2s;
+  width: 100%;
+}
+.btn:hover {
+  transform: scale(1.03);
+  opacity: 0.8;
+}
+
+.allNotes-btn {
+  padding: 7px 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: none;
+  border-radius: 10px;
+  background: rgb(32, 195, 32);
+  color: #3f3f3f;
+  transition: 0.2s;
+  width: 100%;
+  width: 30%;
+  padding: 10px 20px;
+}
+.allNotes-btn:hover {
+  transform: scale(1.03);
+  opacity: 0.8;
+}
+
+.navigation, .darkNavigation {
+  display: grid;
+  grid-template-columns: 300px 1fr 300px;
+  width: 100%;
+  height: 10vh;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  font-size: 1.1rem;
+  border-bottom: 2px solid #3f3f3f;
+}
+.navigation .icon, .darkNavigation .icon {
+  font-size: 2rem;
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+}
+.navigation .nav-left, .darkNavigation .nav-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.navigation .nav-right, .darkNavigation .nav-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: flex-end;
+}
+.navigation .nav-right button:nth-child(1), .darkNavigation .nav-right button:nth-child(1) {
+  background: none;
+  border: none;
+  color: #fff;
+}
+.navigation .nav-right .search-icon, .darkNavigation .nav-right .search-icon {
+  font-size: 2rem;
+  cursor: pointer;
+  margin-right: 15px;
+  border-radius: 50%;
+}
+.navigation .nav-right .dark-mode, .darkNavigation .nav-right .dark-mode, .navigation .nav-right .dark-mode-on, .darkNavigation .nav-right .dark-mode-on {
+  background: #fff;
+  color: #3f3f3f;
+  width: 60px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 10px;
+  padding: 4px;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+.navigation .nav-right .dark-mode .dark-sphere, .darkNavigation .nav-right .dark-mode .dark-sphere, .navigation .nav-right .dark-mode-on .dark-sphere, .darkNavigation .nav-right .dark-mode-on .dark-sphere {
+  background: #333333;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  z-index: 2;
+}
+.navigation .nav-right .dark-mode-on, .darkNavigation .nav-right .dark-mode-on {
+  background: #333333;
+  color: #fff;
+}
+.navigation .nav-right .dark-mode-on .dark-sphere, .darkNavigation .nav-right .dark-mode-on .dark-sphere {
+  background: #fff;
+}
+
+.darkNavigation {
+  border-bottom: 2px solid #b3b0b0;
+  color: #333333;
+}
+
+.main {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  height: 100%;
+  margin: 1rem 2rem;
+}
+.main .notesMenu, .main .darkNotesMenu {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  border-right: 2px solid #3f3f3f;
+  width: 20%;
+}
+.main .notesMenu .addSection, .main .darkNotesMenu .addSection {
+  font-size: 1.2rem;
+  width: 95%;
+}
+.main .notesMenu .notesMenu-note, .main .darkNotesMenu .notesMenu-note, .main .notesMenu .darkNotesMenu-note, .main .darkNotesMenu .darkNotesMenu-note {
+  border-bottom: 2px solid #3f3f3f;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  width: 100%;
+  color: #3f3f3f;
+  cursor: pointer;
+}
+.main .notesMenu .notesMenu-note .trashIcon, .main .darkNotesMenu .notesMenu-note .trashIcon, .main .notesMenu .darkNotesMenu-note .trashIcon, .main .darkNotesMenu .darkNotesMenu-note .trashIcon, .main .notesMenu .notesMenu-note .editBtn, .main .darkNotesMenu .notesMenu-note .editBtn, .main .notesMenu .darkNotesMenu-note .editBtn, .main .darkNotesMenu .darkNotesMenu-note .editBtn {
+  transition: 0.2s;
+  background: transparent;
+  border: none;
+  color: red;
+  cursor: pointer;
+}
+.main .notesMenu .notesMenu-note .trashIcon:hover, .main .darkNotesMenu .notesMenu-note .trashIcon:hover, .main .notesMenu .darkNotesMenu-note .trashIcon:hover, .main .darkNotesMenu .darkNotesMenu-note .trashIcon:hover, .main .notesMenu .notesMenu-note .editBtn:hover, .main .darkNotesMenu .notesMenu-note .editBtn:hover, .main .notesMenu .darkNotesMenu-note .editBtn:hover, .main .darkNotesMenu .darkNotesMenu-note .editBtn:hover {
+  transform: scale(1.1);
+}
+.main .notesMenu .notesMenu-note .editBtn, .main .darkNotesMenu .notesMenu-note .editBtn, .main .notesMenu .darkNotesMenu-note .editBtn, .main .darkNotesMenu .darkNotesMenu-note .editBtn {
+  color: yellow;
+}
+.main .notesMenu .activeSection, .main .darkNotesMenu .activeSection {
+  box-shadow: 6px 5px 50px black;
+}
+.main .notesMenu .darkNotesMenu-note, .main .darkNotesMenu .darkNotesMenu-note {
+  border-bottom: 2px solid #b3b0b0;
+}
+.main .notesMenu .darkNotesMenu-note .notesMenu-note__quan, .main .darkNotesMenu .darkNotesMenu-note .notesMenu-note__quan {
+  color: #3f3f3f;
+}
+.main .notesMenu .darkNotesMenu-note .notesMenu-note__title, .main .darkNotesMenu .darkNotesMenu-note .notesMenu-note__title {
+  color: #3f3f3f;
+  font-weight: bold;
+}
+.main .notesMenu .notesMenu-note__title, .main .darkNotesMenu .notesMenu-note__title {
+  color: #b3b0b0;
+}
+.main .notesMenu .notesMenu-note__quan, .main .darkNotesMenu .notesMenu-note__quan {
+  background: red;
+  padding: 7px;
+  border-radius: 10px;
+}
+.main .darkNotesMenu {
+  border-right: 2px solid #b3b0b0;
+}
+.main .notes {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  width: 70%;
+}
+.main .notes .notes-note, .main .notes .darkNotes-note {
+  background: #CD5B45;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  border-radius: 10px;
+  box-shadow: 1px 3px 4px rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  color: #333333;
+  width: 300px;
+  min-height: 350px;
+  max-height: 600px;
+}
+.main .notes .notes-note:hover, .main .notes .darkNotes-note:hover {
+  transform: translate(10px, -10px);
+}
+.main .notes .notes-note .note-up, .main .notes .darkNotes-note .note-up {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.main .notes .notes-note .note-up h4, .main .notes .darkNotes-note .note-up h4 {
+  background: #333333;
+  color: #fff;
+  font-weight: bold;
+  font-size: 0.9rem;
+  padding: 10px;
+  border-radius: 10px;
+}
+.main .notes .notes-note .note-up h3, .main .notes .darkNotes-note .note-up h3 {
+  word-break: break-all;
+  font-weight: bold;
+}
+.main .notes .notes-note .note-text, .main .notes .darkNotes-note .note-text {
+  line-height: 24px;
+  margin: 10px 0;
+  font-weight: 500;
+  font-size: 0.9rem;
+  word-break: break-all;
+}
+.main .notes .notes-note .note-bottom, .main .notes .darkNotes-note .note-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid #fff;
+  padding-top: 5px;
+}
+.main .notes .notes-note .note-bottom .trashIcon, .main .notes .darkNotes-note .note-bottom .trashIcon, .main .notes .notes-note .note-bottom .notesMenu .notesMenu-note .editBtn, .main .notes .darkNotes-note .note-bottom .notesMenu .notesMenu-note .editBtn, .main .notesMenu .notesMenu-note .notes .notes-note .note-bottom .editBtn, .main .notesMenu .notesMenu-note .notes .darkNotes-note .note-bottom .editBtn, .main .notes .notes-note .note-bottom .notesMenu .darkNotesMenu-note .editBtn, .main .notes .darkNotes-note .note-bottom .notesMenu .darkNotesMenu-note .editBtn, .main .notesMenu .darkNotesMenu-note .notes .notes-note .note-bottom .editBtn, .main .notesMenu .darkNotesMenu-note .notes .darkNotes-note .note-bottom .editBtn, .main .notes .notes-note .note-bottom .darkNotesMenu .notesMenu-note .editBtn, .main .notes .darkNotes-note .note-bottom .darkNotesMenu .notesMenu-note .editBtn, .main .darkNotesMenu .notesMenu-note .notes .notes-note .note-bottom .editBtn, .main .darkNotesMenu .notesMenu-note .notes .darkNotes-note .note-bottom .editBtn, .main .notes .notes-note .note-bottom .darkNotesMenu .darkNotesMenu-note .editBtn, .main .notes .darkNotes-note .note-bottom .darkNotesMenu .darkNotesMenu-note .editBtn, .main .darkNotesMenu .darkNotesMenu-note .notes .notes-note .note-bottom .editBtn, .main .darkNotesMenu .darkNotesMenu-note .notes .darkNotes-note .note-bottom .editBtn {
+  width: 30px;
+  height: 30px;
+  font-size: 1.15rem;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: "";
+}
+.main .notes .darkNotes-note {
+  color: #333333;
+}
+.main .notes .darkNotes-note .note-up h4 {
+  color: #333333;
+  background: #fff;
+}/*# sourceMappingURL=app.css.map */
