@@ -11,7 +11,7 @@ const Navbar = (props:any) => {
     <nav className={dark ? 'navigation' : "darkNavigation"}>
         <div className="nav-left">
           <AiOutlineUser className='icon'/>
-          <h4>Stas Rechimciuc</h4>
+          <h4>Welcome, User!</h4>
         </div>
         <button className='allNotes-btn'
          onClick={() => setShowAllNotes(true)}>

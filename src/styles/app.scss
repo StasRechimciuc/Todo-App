@@ -37,7 +37,7 @@ body {
 }
 .allNotes-btn{
     @include button;
-    width: 30%;
+    width: auto;
     padding: 10px 20px;
 }
 .navigation{
@@ -185,7 +185,7 @@ body {
     }
     .notes{
         display: grid;
-        grid-template-columns: repeat(2,1fr);
+        grid-template-columns: repeat(3,1fr);
         gap: 40px;
         width: 70%;
         .notes-note{
@@ -252,5 +252,65 @@ body {
                 background: #fff;
             }
         }
+    }
+}
+/* -------Media Queries:-------- */
+@media screen and (max-width:1425px) {
+    .notes{
+        width: 80%!important;
+    }
+}
+@media screen and (max-width:1270px) {
+    .notes{
+        grid-template-columns: repeat(2,1fr)!important;
+        width: auto!important;
+    }
+}
+@media screen and (max-width:920px) {
+    .main{
+        flex-direction: column;
+        width: 100%!important;
+        .notesMenu{
+            width: 90%!important;
+        }
+        .notes{
+            gap: 40px 100px;
+        }
+        .allNotes-btn{
+           margin: 0;
+        }
+    }
+}
+@media screen and (max-width:865px) {
+    .navigation{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .notes-note{
+        width: 80%!important;
+    }
+}
+@media screen and (max-width:680px) {
+    .notes{
+        grid-template-columns: 1fr!important;
+    }
+    .notes-note{
+        width: 90%!important;
+    }
+}
+@media screen and (max-width:680px) {
+    .navigation{
+        display: flex;
+        .nav-left{
+            display: none!important;
+            .allNotes-btn{
+                margin: 0!important;
+            }
+        }
+        .nav-right{
+            gap: 1px;
+        }
+    }
+    .main{
+        margin: 1rem!important;
     }
 }
